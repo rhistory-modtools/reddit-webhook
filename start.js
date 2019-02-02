@@ -14,11 +14,13 @@ reddit.config({
 });
 
 let lastSeenText = '{}';
+let firstRun = false;
 
 try {
     lastSeenText = fs.readFileSync('./last_seen.json');
 } catch (err) {
     console.log('No last seen json. first time starting?');
+    firstRun = true;
 }
 
 // Read mod comments we monitor
@@ -148,13 +150,13 @@ function subredditCheck(subreddit) {
         });
 
         // Let's check if we have stuff to send out
-        if(discordEmbeds.length) {
+        if(discordEmbeds.length && !firstRun) {
             subreddit.discordHooks.forEach((hook) => {
                 handleDiscordEmbeds(discordEmbeds, {webhook : hook});
             });
         }
 
-        if(slackAttachements.length) {
+        if(slackAttachements.length && !firstRun) {
             subreddit.slackHooks.forEach((hook) => {
                 handleSlackAttachements(slackAttachements, {webhook : hook});
             });
