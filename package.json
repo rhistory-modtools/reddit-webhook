@@ -1,0 +1,12 @@
+{
+  "name": "reddit-webhook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "author": "ceeesch",
+  "license": "MIT License",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "snoowrap": "^1.15.2"
+  }
+}

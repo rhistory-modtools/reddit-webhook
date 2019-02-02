@@ -1,0 +1,9 @@
+*.bak
+/.idea
+/.settings
+/.vscode
+/node_modules
+/build
+/scratch.js
+/config.js
+/last_seen.json
