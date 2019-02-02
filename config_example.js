@@ -1,10 +1,10 @@
 module.exports = {
-    oauthDetails: { // Use https://github.com/not-an-aardvark/reddit-oauth-helper or simply use script type and fill in the below keys
+    oauthDetails: { // Use https://github.com/not-an-aardvark/reddit-oauth-helper and https://www.reddit.com/prefs/apps/ create a "personal use script" and fill in the details below.
         userAgent: '',
         clientId: '',
         clientSecret: '',
-        username: '',
-        password: ''
+        accessToken: '',
+        refreshToken: '',
     },
     checkInterval: 2, // In minutes
     monitorSubs: [

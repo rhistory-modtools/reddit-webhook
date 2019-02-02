@@ -117,17 +117,16 @@ function makeDiscordEmbed(subreddit, submission) {
 
 // check subreddit
 function subredditCheck(subreddit) {
-    let discordEmbeds = [];
-    let slackAttachements = [];
-
     reddit.getSubreddit(subreddit.name).getNew({
         limit: 100
     }).then(submissions => {
+        const discordEmbeds = [];
+        const slackAttachements = [];
         submissions.forEach(submission => {
             if(!lastSeen[subreddit.name].includes(submission.name)) {
 
                 // We really don't need to keep that many posts around.
-                if (lastSeen[subreddit.name].length > 100) {
+                if (lastSeen[subreddit.name].length > 200) {
                     lastSeen[subreddit.name].shift();
                 }
 
