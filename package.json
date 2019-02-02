@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "start.js",
-  "author": "ceeesch",
+  "scripts": {
+      "start": "start.js"
+  },
+  "author": "creesch",
   "license": "MIT License",
   "dependencies": {
     "axios": "^0.18.0",
