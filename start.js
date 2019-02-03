@@ -65,13 +65,13 @@ function makeSlackAttachement(subreddit, submission) {
     const attachment = {
         title: submission.title,
         title_link: `https://www.reddit.com${submission.permalink}`,
-        author_name: `New post from /u/${submission.author.name}`,
-        author_link: `https://reddit.com/user/${submission.author.name}`,
-        footer: `In /r/${subreddit.name}`
+        author_name: `/r/${subreddit.name}`,
+        author_link: `https://reddit.com/r/${subreddit.name}`,
+        footer: `By /u/${submission.author.name}`
     };
 
     if(subreddit.iconUrl) {
-        attachment['footer_icon'] = subreddit.iconUrl;
+        attachment['author_icon'] = subreddit.iconUrl;
     }
 
     if(subreddit.color) {
@@ -97,10 +97,10 @@ function makeDiscordEmbed(subreddit, submission) {
     const embed = {
         title: submission.title,
         url: `https://www.reddit.com${submission.permalink}`,
-        description: `in /r/${subreddit.name}`,
+        description: `By /u/${submission.author.name}`,
         author: {
-            name: `New post from /u/${submission.author.name}`,
-            url: `https://reddit.com/user/${submission.author.name}`
+            name: `/r/${subreddit.name}`,
+            url: `https://reddit.com/r/${subreddit.name}`
         }
     };
 
